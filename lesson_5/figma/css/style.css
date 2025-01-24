@@ -185,3 +185,44 @@ print вид приложения во время принта
   color: #F7654A;
   margin-bottom: 30px;
 }
+
+.add_block {
+  background-color: #F7654A;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 0 45px 0;
+}
+
+.req_form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: Oswald;
+  color: white;
+}
+
+.req_form div:first-child h2 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.req_form div:first-child p {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.req_form div:last-child button {
+  padding: 15px 45px;
+  background-color: #fff;
+  border: none;
+  font-size: 14px;
+  font-family: Oswald;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.services>div:hover i {
+  display: none;
+}
