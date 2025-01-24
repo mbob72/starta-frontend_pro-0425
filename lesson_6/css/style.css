@@ -1,0 +1,89 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 10px;
+}
+
+.grid_container .grid_element {
+  background-color: gray;
+  font-size: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  border: 1px solid silver;
+}
+
+.grid_container {
+  display: grid;
+  /* grid-template-columns: 30% 200px 200px; */
+  /* grid-template-columns: auto auto auto auto auto auto; */
+  /* repeat(кол., размер) */
+  /* grid-template-columns: repeat(6, auto) repeat(2, 100px) 20%; */
+
+  /* fr = fraction */
+  /* grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: [start] 100px [middle] 250px [end];
+  gap: 10px; */
+  /* row-gap: 10px; */
+  /* column-gap: 10px; */
+
+  /* паттерн размеров который повторяется циклично */
+  /* grid-auto-rows: 300px 150px;
+  grid-auto-columns: 200px 300px;
+  grid-auto-flow: column; */
+
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.grid_container>.grid_element:nth-child(4) {
+  grid-column-start: 1;
+  /* grid-column-end: 3; */
+  grid-column-end: span 2;
+  /* grid-column: 1 / span 2; */
+
+  grid-row-start: 2;
+  grid-row-end: 4;
+  /* grid-row: 2 / 4; */
+}
+
+.container {
+  display: grid;
+  gap: 10px;
+  height: 100vh;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+}
+
+.container>div {
+  background-color: #32373c;
+  font-size: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.block_6 {
+  grid-column: 1/ 3;
+  grid-row: 2 / 5;
+}
+
+.block_7 {
+  grid-column: 3 / 5;
+  grid-row: 2 / 4;
+}
+
+.block_10 {
+  grid-column: 1 / 3;
+}
+
+.block_11 {
+  grid-column: 3 / 6;
+  grid-row: 4 / 6;
+}
