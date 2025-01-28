@@ -69,8 +69,8 @@ body {
   color: #fff;
 }
 
-.block_6 {
-  grid-column: 1/ 3;
+/* .block_6 {
+  grid-column: 1 / 3;
   grid-row: 2 / 5;
 }
 
@@ -86,4 +86,57 @@ body {
 .block_11 {
   grid-column: 3 / 6;
   grid-row: 4 / 6;
+} */
+
+.container {
+  grid-template-areas:
+    "microchip temperature-up floppy-disk memory  globe"
+    "chart-1   chart-1        chart-2     chart-2 temperature-down"
+    "chart-1   chart-1        chart-2     chart-2 hexagon-nodes"
+    "chart-1   chart-1        battery     battery battery"
+    "clock     clock          battery     battery battery";
+}
+
+.block_1 {
+  grid-area: microchip;
+}
+
+.block_2 {
+  grid-area: temperature-up;
+}
+
+.block_3 {
+  grid-area: floppy-disk;
+}
+
+.block_4 {
+  grid-area: memory;
+}
+
+.block_5 {
+  grid-area: globe;
+}
+
+.block_6 {
+  grid-area: chart-1;
+}
+
+.block_7 {
+  grid-area: chart-2;
+}
+
+.block_8 {
+  grid-area: temperature-down;
+}
+
+.block_9 {
+  grid-area: hexagon-nodes;
+}
+
+.block_10 {
+  grid-area: battery;
+}
+
+.block_11 {
+  grid-area: clock;
 }
