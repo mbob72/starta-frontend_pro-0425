@@ -3,14 +3,14 @@
 let numArr = [5, 1, 6, 8, 10, 25, -3, -32, 12, -5]
 let filteredArr = numArr.filter(function (value, index) {
   if (value < 0) {
-    return value
+    return true
   }
 })
 // console.log(filteredArr);
 
 let result = numArr.find(function (value, index) {
   if (value % 2 === 0) {
-    return value
+    return true
   }
 })
 // console.log(result) // 6
