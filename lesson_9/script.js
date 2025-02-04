@@ -155,3 +155,19 @@ let newProducts = products.map(function (product) {
   return newPorductObject
 })
 console.log(newProducts);
+
+// Создание нового массива на основе исходного (map)
+// Когда надо делать одно и то же действие со всеми элементами массива (forEach)
+// Если надо отфильтровать массив по каким то критериям (filter)
+// Если задача связана с агрегацией (reduce)
+
+// map
+// sort
+// forEach
+// reduce
+// filter
+// find
+// indexOf
+// lastIndexOf
+// includes
+// splice
