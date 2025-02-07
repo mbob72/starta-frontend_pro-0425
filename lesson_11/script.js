@@ -69,7 +69,7 @@ btnMinus.addEventListener("click", function () {
 // 3. после создания переменной counterValue проверить есть ли в localStorage уже сохраненное значение("counter"), если есть то к переменной counterValue присвоить это значение в числовом типе данных а если нет то ничего не делать
 
 // ===============================
-let settings = {
+let settingsObj = {
   website: {
     theme: "dark",
     currency: "eur"
@@ -102,7 +102,7 @@ let settings = {
 // let parsedSettings = JSON.parse(localStorage.getItem("settings"))
 // console.log(parsedSettings)
 
-// создать кнопку remeberMe и при клике поменять значение свойтсва rememberMe внутри объекта settings и обратно сохранить в localStorage
+// создать кнопку remeberMe и при клике поменять значение свойтсва settingsememberMe внутри объекта settings и обратно сохранить в localStorage
 // чтобы при каждом клике значение реверснулся
 
 // rememberMe: true
@@ -111,7 +111,7 @@ let settings = {
 // click
 // rememberMe: true
 
-localStorage.setItem("settings", JSON.stringify(settings))
+localStorage.setItem("settings", JSON.stringify(settingsObj))
 let btn = document.querySelector("#remember_me")
 btn.addEventListener("click", function () {
   let jsonSettings = JSON.parse(localStorage.getItem("settings"))
@@ -120,3 +120,5 @@ btn.addEventListener("click", function () {
   // !true = false
   // !false = true
 })
+// let isActive = true
+// isActive = !isActive
