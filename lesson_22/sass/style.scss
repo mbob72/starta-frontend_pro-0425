@@ -1,0 +1,69 @@
+// sass: preprocessor css 
+
+@use "variables" as vars;
+@use "variables_2" as vars2;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin d-flex($justify-value: center, $align-value: center, $direction-value: row) {
+  display: flex;
+  justify-content: $justify-value;
+  align-items: $align-value;
+  flex-direction: $direction-value;
+}
+
+.post {
+  &_reactions {
+    &_dislikes {
+      color: vars.$color_1;
+    }
+
+    @include d-flex;
+  }
+
+  &_list {
+    @include d-flex(space-evenly, center, row);
+
+    li {
+      color: gray;
+
+      &.active {
+        color: green;
+      }
+    }
+  }
+
+  padding: 50px;
+
+  // border: 1px solid royalblue;
+
+  // border-width: 1px;
+  // border-style: solid;
+  // border-color: royalblue;
+
+  border: {
+    width: 1px;
+    style: dotted;
+    color: royalblue;
+  }
+
+  width: 80%;
+  margin: 0 auto;
+  // font: {
+  //   weight: bold;
+  //   size: 24px;
+  // }
+
+  &_title {
+    color: vars2.$color_1;
+  }
+
+  &_content {
+    color: vars.$color_2;
+    text-align: vars.$textPosition;
+  }
+}
