@@ -2,18 +2,12 @@
 
 @use "variables" as vars;
 @use "variables_2" as vars2;
+@use "mixins" as mx;
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-@mixin d-flex($justify-value: center, $align-value: center, $direction-value: row) {
-  display: flex;
-  justify-content: $justify-value;
-  align-items: $align-value;
-  flex-direction: $direction-value;
 }
 
 .post {
@@ -22,11 +16,11 @@
       color: vars.$color_1;
     }
 
-    @include d-flex;
+    @include mx.d-flex;
   }
 
   &_list {
-    @include d-flex(space-evenly, center, row);
+    @include mx.d-flex(space-evenly, center, row);
 
     li {
       color: gray;
@@ -60,10 +54,60 @@
 
   &_title {
     color: vars2.$color_1;
+    text-align: vars.$textPosition;
   }
 
   &_content {
     color: vars.$color_2;
     text-align: vars.$textPosition;
   }
+}
+
+.p_1 {
+  color: vars.$color_1;
+  text-align: center;
+  font-size: 24px;
+}
+
+%text-styles {
+  display: block;
+  color: vars.$color_1;
+  text-align: center;
+  font-size: 24px;
+}
+
+.span_1 {
+  font-weight: bolder;
+  @extend %text-styles;
+}
+
+.avatar_1 {
+  @include mx.avatar;
+}
+
+.avatar_2 {
+  @include mx.avatar(150px, 3px, blue, true);
+}
+
+.my-list {
+  margin-left: 50px;
+
+  @for $i from 1 through 5 {
+    .my-item-#{$i} {
+      // .my-item-1
+      // .my-item-2
+      color: green;
+    }
+  }
+}
+
+@function square($n) {
+  $result: $n * $n;
+  @debug $result;
+  @return $result
+}
+
+.avatar_2 {
+  width: #{square(10)}px;
+  // border: #{square(2)}px solid red;
 }

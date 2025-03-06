@@ -35,10 +35,68 @@
 }
 .post_title {
   color: pink;
+  text-align: center;
 }
 .post_content {
   color: blue;
   text-align: center;
+}
+
+.p_1 {
+  color: red;
+  text-align: center;
+  font-size: 24px;
+}
+
+.span_1 {
+  display: block;
+  color: red;
+  text-align: center;
+  font-size: 24px;
+}
+
+.span_1 {
+  font-weight: bolder;
+}
+
+.avatar_1 {
+  width: 100px;
+  height: 100px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: green;
+}
+
+.avatar_2 {
+  width: 150px;
+  height: 150px;
+  border-style: solid;
+  border-width: 3px;
+  border-color: blue;
+  border-radius: 50%;
+}
+
+.my-list {
+  margin-left: 50px;
+}
+.my-list .my-item-1 {
+  color: green;
+}
+.my-list .my-item-2 {
+  color: green;
+}
+.my-list .my-item-3 {
+  color: green;
+}
+.my-list .my-item-4 {
+  color: green;
+}
+.my-list .my-item-5 {
+  color: green;
+}
+
+.avatar_2 {
+  width: 100px;
 }
 
 /*# sourceMappingURL=style.css.map */

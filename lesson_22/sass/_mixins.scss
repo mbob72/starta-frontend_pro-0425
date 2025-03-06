@@ -1,0 +1,18 @@
+@mixin d-flex($justify-value: center, $align-value: center, $direction-value: row) {
+  display: flex;
+  justify-content: $justify-value;
+  align-items: $align-value;
+  flex-direction: $direction-value;
+}
+
+@mixin avatar($size: 100px, $border-width: 2px, $border-color: green, $isCircle: false, $border-radius: 50%) {
+  width: $size;
+  height: $size;
+  border-style: solid;
+  border-width: $border-width;
+  border-color: $border-color;
+
+  @if $isCircle {
+    border-radius: $border-radius;
+  }
+}
