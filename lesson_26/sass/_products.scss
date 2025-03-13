@@ -1,0 +1,71 @@
+@use "variables" as vars;
+
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 24px;
+  padding: 16px 32px;
+
+  .product-card {
+    background-color: #293445;
+    border-radius: 8px;
+    overflow: hidden;
+
+    .product-image-container {
+      height: 200px;
+      position: relative;
+
+      .product-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .product-category {
+        position: absolute;
+        color: vars.$primary-color;
+        background-color: #fff;
+        border-radius: 15px;
+        padding: 3px 8px;
+        top: 10px;
+        left: 10px;
+        font-size: 12px;
+      }
+
+      .product-select {
+        position: absolute;
+        font-size: 22px;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        background-color: #fff;
+        border-radius: 50%;
+        top: 10px;
+        right: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+
+        &:hover {
+          background-color: vars.$accent-color;
+          color: vars.$secondary-color;
+        }
+      }
+    }
+
+    .product-info {
+      padding: 16px;
+
+      .product-title {
+        font-size: 14px;
+        margin-bottom: 33px;
+      }
+
+      .product-price {
+        font-size: 20px;
+        font-weight: bold;
+      }
+    }
+  }
+}
