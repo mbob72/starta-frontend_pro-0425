@@ -151,11 +151,11 @@ function addToCart(productId) {
 }
 
 const cartIcon = document.querySelector(".cart-icon")
+const closeCart = document.querySelector(".close-cart")
 cartIcon.addEventListener('click', toggleCart);
+closeCart.addEventListener('click', toggleCart)
 function toggleCart() {
   cartSidebar.classList.toggle('open');
-  overlay.classList.toggle('open');
-  renderCartItems();
 }
 
 getCategories()
