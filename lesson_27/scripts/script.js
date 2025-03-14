@@ -120,7 +120,30 @@ function renderProducts() {
 // если продукта нет в корзине, то создать объект с такими свойствами {id, title, image, price, count} и добавить в массив cart
 // products = [{id: 1, ...}, {id: 2, ...}] 
 function addToCart(productId) {
-  // ...
+  let product = products.find(p => p.id === productId)
+  if (!product) {
+    return
+  }
+
+  // let productIndex = cart.findIndex(p => p.id === productId)
+  // if (productIndex >= 0) {
+  //   cart.splice(productInCart, 1)
+  // }
+
+  let productInCart = cart.find(p => p.id === productId)
+  if (productInCart) {
+    cart = cart.filter(p => p.id !== productId)
+  } else {
+    cart.push({
+      id: product.id,
+      title: product.title,
+      image: product.thumbnail,
+      price: product.price,
+      count: product.count
+    })
+  }
+
+  cartProductsCount.innerText = cart.length
 }
 
 getCategories()
