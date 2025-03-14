@@ -90,13 +90,16 @@ function renderProducts() {
       return product.title.toLowerCase().includes(searchValue)
     }
   }).forEach(product => {
+    const existInCart = cart.find(p => p.id === product.id)
     productsContainer.insertAdjacentHTML("beforeend", `
     <div class="product-card">
       <div class="product-image-container">
-        <img src="${product.thumbnail}" alt="product"
-          class="product-image">
+        <img src="${product.thumbnail}" alt="product" class="product-image">
         <div class="product-category">${product.category}</div>
-        <div class="product-select" data-productid="${product.id}">+</div>
+      ${existInCart ?
+        `<div class="product-select exist" data-productid="${product.id}">✓</div>` :
+        `<div class="product-select" data-productid="${product.id}">+</div>`
+      }
       </div>
       <div class="product-info">
         <p class="product-title">${product.title}</p>
@@ -144,6 +147,15 @@ function addToCart(productId) {
   }
 
   cartProductsCount.innerText = cart.length
+  renderProducts()
+}
+
+const cartIcon = document.querySelector(".cart-icon")
+cartIcon.addEventListener('click', toggleCart);
+function toggleCart() {
+  cartSidebar.classList.toggle('open');
+  overlay.classList.toggle('open');
+  renderCartItems();
 }
 
 getCategories()

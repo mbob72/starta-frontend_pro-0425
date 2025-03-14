@@ -51,6 +51,11 @@
           background-color: vars.$accent-color;
           color: vars.$secondary-color;
         }
+
+        &.exist {
+          background-color: vars.$accent-color;
+          color: vars.$secondary-color;
+        }
       }
     }
 

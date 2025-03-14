@@ -40,30 +40,38 @@
   </div>
 
   <div class="products-container">
-    <!-- <div class="product-card">
-      <div class="product-image-container">
-        <img src="https://cdn3.pixelcut.app/7/10/ai_background_1_5b79cd8ea3_1ea97b2c5a.jpg" alt="product"
-          class="product-image">
-        <div class="product-category">clothes</div>
-        <div class="product-select">+</div>
-      </div>
-      <div class="product-info">
-        <p class="product-title">Classic Red Pullover Hoodie</p>
-        <p class="product-price">$10</p>
-      </div>
+  </div>
+
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h2 class="cart-title">My Order</h2>
+      <button class="close-cart" id="closeCart">×</button>
     </div>
-    <div class="product-card">
-      <div class="product-image-container">
-        <img src="https://cdn3.pixelcut.app/7/10/ai_background_1_5b79cd8ea3_1ea97b2c5a.jpg" alt="product"
-          class="product-image">
-        <div class="product-category">clothes</div>
-        <div class="product-select"></div>
+    <div class="cart-items" id="cartItems">
+      <!-- Cart items will be added here -->
+      <div class="cart-item">
+        <img src="https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/thumbnail.png"
+          alt="${item.title}" class="cart-item-image">
+        <div class="cart-item-details">
+          <div class="cart-item-title">Test</div>
+          <div class="cart-item-price">$100</div>
+          <div class="cart-item-actions">
+            <button class="quantity-btn decrease-quantity" data-id="${item.id}">-</button>
+            <span class="item-quantity">10</span>
+            <button class="quantity-btn increase-quantity" data-id="${item.id}">+</button>
+            <button class="remove-item" data-id="${item.id}">×</button>
+          </div>
+        </div>
       </div>
-      <div class="product-info">
-        <p class="product-title">Classic Red Pullover Hoodie</p>
-        <p class="product-price">$10</p>
+      <div class="empty-cart">Your cart is empty</div>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total:</span>
+        <span id="cartTotal">$0</span>
       </div>
-    </div> -->
+      <button class="checkout-btn">Checkout</button>
+    </div>
   </div>
 </body>
 <script src="scripts/script.js"></script>

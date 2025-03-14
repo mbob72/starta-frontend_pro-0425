@@ -1,0 +1,137 @@
+@use "variables" as *;
+
+.cart-sidebar {
+  position: fixed;
+  right: -400px;
+  top: 0;
+  width: 400px;
+  height: 100vh;
+  background-color: $sidebar-bg;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: right 0.3s ease-in-out;
+  overflow-y: auto;
+
+  &.open {
+    right: 0;
+  }
+
+  .cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid $border-color;
+
+    .cart-title {
+      font-size: 1.25rem;
+      font-weight: bold;
+    }
+
+    .close-cart {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: $secondary-color;
+      cursor: pointer;
+    }
+  }
+
+  .cart-items {
+    padding: 1rem;
+
+    .cart-item {
+      display: flex;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid $border-color;
+
+      .cart-item-image {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 4px;
+      }
+
+      .cart-item-details {
+        flex: 1;
+
+        .cart-item-title {
+          font-size: 0.9rem;
+          margin-bottom: 0.5rem;
+        }
+
+        .cart-item-price {
+          font-weight: bold;
+        }
+
+        .cart-item-actions {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          margin-top: 0.5rem;
+
+          .quantity-btn {
+            width: 24px;
+            height: 24px;
+            background-color: $border-color;
+            border: none;
+            color: $secondary-color;
+            border-radius: 4px;
+            cursor: pointer;
+          }
+
+          .item-quantity {
+            font-size: 0.9rem;
+          }
+        }
+      }
+
+      .remove-item {
+        color: #ff6b6b;
+        background: none;
+        border: none;
+        cursor: pointer;
+        margin-left: auto;
+      }
+    }
+  }
+
+  .cart-footer {
+    position: sticky;
+    bottom: 0;
+    background-color: $sidebar-bg;
+    padding: 1.5rem;
+    border-top: 1px solid $border-color;
+
+    .cart-total {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .checkout-btn {
+      width: 100%;
+      padding: 1rem;
+      background-color: $accent-color;
+      color: $secondary-color;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #2a75e6;
+      }
+    }
+  }
+}
+
+.empty-cart {
+  text-align: center;
+  padding: 2rem;
+  color: $gray-dark;
+}
