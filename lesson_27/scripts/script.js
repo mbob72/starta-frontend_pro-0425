@@ -142,12 +142,13 @@ function addToCart(productId) {
       title: product.title,
       image: product.thumbnail,
       price: product.price,
-      count: product.count
+      count: 1
     })
   }
 
   cartProductsCount.innerText = cart.length
   renderProducts()
+  renderCartProducts()
 }
 
 const cartIcon = document.querySelector(".cart-icon")
@@ -156,6 +157,29 @@ cartIcon.addEventListener('click', toggleCart);
 closeCart.addEventListener('click', toggleCart)
 function toggleCart() {
   cartSidebar.classList.toggle('open');
+}
+
+const cartProducts = document.querySelector(".cart-items")
+function renderCartProducts() {
+  cartProducts.innerHTML = ""
+  cart.forEach(product => {
+    cartProducts.insertAdjacentHTML("beforeend",
+      `<div class="cart-item">
+        <img src="${product.image}"
+          alt="${product.title}" class="cart-item-image">
+        <div class="cart-item-details">
+          <div class="cart-item-title">${product.title}</div>
+          <div class="cart-item-price">$${product.price}</div>
+          <div class="cart-item-actions">
+            <button class="quantity-btn decrease-quantity" data-id="${product.id}">-</button>
+            <span class="item-quantity">${product.count}</span>
+            <button class="quantity-btn increase-quantity" data-id="${product.id}">+</button>
+            <button class="remove-item" data-id="${product.id}">×</button>
+          </div>
+        </div>
+      </div>`
+    )
+  })
 }
 
 getCategories()
