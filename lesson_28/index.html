@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <h1>Shop</h1>
+    </div>
+    <div class="nav-links">
+      <nav>
+        <ul>
+          <!-- <li class="nav-link active">All</li>
+          <li class="nav-link">Clothes</li>
+          <li class="nav-link">Electronics</li>
+          <li class="nav-link">Furniture</li>
+          <li class="nav-link">Shoes</li> -->
+        </ul>
+      </nav>
+    </div>
+    <div class="cart-icon">
+      <span>🛒</span>
+      <div class="cart-count">0</div>
+    </div>
+  </header>
+  <div class="search-container">
+    <input placeholder="Search product" type="text" class="search-box">
+  </div>
+
+  <div class="products-container">
+  </div>
+
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h2 class="cart-title">My Order</h2>
+      <button class="close-cart" id="closeCart">×</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <!-- Cart items will be added here -->
+      <div class="empty-cart">Your cart is empty</div>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total:</span>
+        <span id="cartTotal">$0</span>
+      </div>
+      <button class="checkout-btn">Checkout</button>
+    </div>
+  </div>
+
+  <div class="modal-window open">
+    <div class="product-modal">
+      <div class="modal-header">
+        <h2 class="modal-title">Product Details</h2>
+        <button class="close-modal">X</button>
+      </div>
+      <div class="modal-content">
+        <div class="product-gallery">
+          <div class="gallery-main">
+            <img
+              src="https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/thumbnail.png"
+              alt="#">
+          </div>
+          <div class="gallery-thumbs">
+            <img class="gallery-thumb"
+              src="https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/thumbnail.png"
+              alt="#">
+            <img class="gallery-thumb"
+              src="https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/thumbnail.png"
+              alt="#">
+          </div>
+        </div>
+        <div class="product-details">
+          <h3 class="modal-product-title">Test product</h3>
+          <span class="modal-product-price">$29.99</span>
+          <p class="modal-product-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="scripts/script.js"></script>
+
+</html>
