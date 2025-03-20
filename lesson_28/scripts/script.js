@@ -133,7 +133,22 @@ const modalProductPrice = document.querySelector(".modal-product-price")
 const modalProductDescription = document.querySelector(".modal-product-description")
 
 function renderModalWindowContent(productId) {
+  // найти объект продукта в массиве products по productId
+  // если продукта нет то удалить класс open у modalWindow
+  // если продукт есть
+  // в mainModalImage добавить элемент img с src = images[0]
+  // в modalThumbnails добавить элементы img где src каждого img это значения из массива images у продукта
+  // в modalProductTitle, modalProductPrice, modalProductDescription соотвественно заголовок, цена, описание продукта
+  const product = products.find(p => p.id === productId)
+  if (!product) {
+    return
+  }
 
+  mainModalImage.innerHTML = `<img src="${product.images[0]}" alt="${product.title}">`
+  modalThumbnails.innerHTML = product.images.map(src => `<img class="gallery-thumb" src="${src}" alt="${product.title}">`).join("")
+  modalProductTitle.innerText = product.title
+  modalProductPrice.innerText = `$${product.price}`
+  modalProductDescription.innerText = product.description
 }
 
 // функция для добавления продукта в корзину по его id
