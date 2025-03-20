@@ -111,7 +111,8 @@ function renderProducts() {
 
   let productSelects = document.querySelectorAll(".product-select")
   productSelects.forEach(function (elem) {
-    elem.addEventListener("click", function () {
+    elem.addEventListener("click", function (event) {
+      event.stopPropagation() // остановить всплытие события клик
       console.log(+this.dataset.productid)
       addToCart(+this.dataset.productid)
     })
@@ -146,6 +147,12 @@ function renderModalWindowContent(productId) {
 
   mainModalImage.innerHTML = `<img src="${product.images[0]}" alt="${product.title}">`
   modalThumbnails.innerHTML = product.images.map(src => `<img class="gallery-thumb" src="${src}" alt="${product.title}">`).join("")
+  // ["<img ...>", "<img ...>", "<img ...>", "<img ...>"].join("")
+  // `<img...>
+  //  <img...>
+  //  <img...>
+  //  <img...>`
+
   modalProductTitle.innerText = product.title
   modalProductPrice.innerText = `$${product.price}`
   modalProductDescription.innerText = product.description
