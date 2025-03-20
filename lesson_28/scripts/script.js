@@ -76,6 +76,7 @@ async function getProducts() {
 const searchInputElem = document.querySelector(".search-box")
 searchInputElem.addEventListener("input", renderProducts)
 
+const modalWindow = document.querySelector(".modal-window")
 function renderProducts() {
   let searchValue = searchInputElem.value.toLowerCase()
   productsContainer.innerHTML = ""
@@ -92,7 +93,7 @@ function renderProducts() {
   }).forEach(product => {
     const existInCart = cart.find(p => p.id === product.id)
     productsContainer.insertAdjacentHTML("beforeend", `
-    <div class="product-card">
+    <div class="product-card" data-productid=${product.id}>
       <div class="product-image-container">
         <img src="${product.thumbnail}" alt="product" class="product-image">
         <div class="product-category">${product.category}</div>
@@ -115,6 +116,24 @@ function renderProducts() {
       addToCart(+this.dataset.productid)
     })
   })
+
+  let productCards = document.querySelectorAll(".product-card")
+  productCards.forEach(function (elem) {
+    elem.addEventListener("click", function () {
+      renderModalWindowContent(+this.dataset.productid)
+      modalWindow.classList.add("open")
+    })
+  })
+}
+
+const mainModalImage = document.querySelector(".gallery-main")
+const modalThumbnails = document.querySelector(".gallery-thumbs")
+const modalProductTitle = document.querySelector(".modal-product-title")
+const modalProductPrice = document.querySelector(".modal-product-price")
+const modalProductDescription = document.querySelector(".modal-product-description")
+
+function renderModalWindowContent(productId) {
+
 }
 
 // функция для добавления продукта в корзину по его id

@@ -269,6 +269,7 @@ header .cart-icon .cart-count {
 
 .modal-window {
   opacity: 0;
+  visibility: hidden;
   position: fixed;
   top: 0;
   left: 0;
@@ -280,6 +281,7 @@ header .cart-icon .cart-count {
 }
 .modal-window.open {
   opacity: 1;
+  visibility: visible;
 }
 
 .product-modal {
