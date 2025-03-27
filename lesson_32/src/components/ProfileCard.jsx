@@ -7,15 +7,36 @@ export default function ProfileCard({ username, email, phone }) {
   // useState возвращает массив из 2 элементов
   // 1 элемент само значение 
   // 2 элемент это функция которая меняет значение и говорит реакту чтобы тот перерисововал компонент
-  let userRateState = useState(0)
-  let userRate = userRateState[0]
-  let setUserRate = userRateState[1]
+  let [userRate, setUserRate] = useState(0)
+  let [showPhone, setShowPhone] = useState(true)
 
-  const handleBtnClick = () => {
+  const handleUprateClick = () => {
     // console.log(`Button clicked in profile card of ${username}`)
     // назначаем новое значение для userRate и перерисововаем компонент
-    setUserRate(++userRate)
+    setUserRate(userRate + 1) // 1
+    console.log(userRate) // 0
+    setUserRate(function (rate) {
+      console.log(rate) // 1
+      return rate + 1
+    })
     // console.log(userRate)
+  }
+
+  const handleDownrateClick = () => {
+    if (!userRate) return
+    setUserRate(--userRate)
+  }
+
+  const handlShowPhone = () => {
+    // showPhone = true
+    setShowPhone(!showPhone) // !true = false
+    console.log(showPhone) // true (просто так не можем получить доступ к пред. значению)
+    // showPhone = false
+    setShowPhone(function (value) {
+      console.log(value) // Здесь внутри callback уже можем получить доступ к пред. значению не дожидаясь ререндера
+      return !value
+    }) // !false = true
+    // showPhone = true
   }
 
   return (
@@ -26,9 +47,12 @@ export default function ProfileCard({ username, email, phone }) {
       <div className="content">
         <p className={ProfileStyles.title}>{username || "John"}</p>
         <p>{email ? email : "john@gmail.com"}</p>
-        <p>{phone}</p>
+        <p>{showPhone ? phone : ""}</p>
         <p>User rate: {userRate}</p>
-        <button onClick={handleBtnClick}>Up rate</button>
+        <button onClick={handleUprateClick}>Up rate</button>
+        <button onClick={handleDownrateClick}>Down rate</button>
+
+        <button onClick={handlShowPhone}>Show phone</button>
       </div>
     </div>
   )

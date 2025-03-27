@@ -10,6 +10,10 @@
   background-color: blanchedalmond;
 }
 
+.profile-card button {
+  margin-right: 8px;
+}
+
 .profile-card>.media>img {
   width: 300px;
 }
