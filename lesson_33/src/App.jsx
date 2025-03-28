@@ -81,7 +81,7 @@ function App() {
           <label htmlFor="password">Password</label>
           <input onChange={handlePassword} value={formState.password} type="password" id='password' />
         </div>
-        <button>Submit</button>
+        <button disabled={true}>Submit</button>
         <div>
           <p>Errors</p>
           <pre>
