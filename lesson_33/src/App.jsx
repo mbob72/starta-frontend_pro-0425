@@ -7,11 +7,36 @@ function App() {
     email: "",
     password: ""
   })
+  const [errors, setErrors] = useState({
+    username: null,
+    email: null,
+    password: null
+  })
 
   const handleUsername = function (e) {
     setFormState({
       ...formState,
       username: e.target.value,
+    })
+
+    if (e.target.value.trim() === "") {
+      setErrors({
+        ...errors,
+        username: "Username is required"
+      })
+      return
+    }
+    if (e.target.value.length <= 3) {
+      setErrors({
+        ...errors,
+        username: "Username need to be more then 3 symbols"
+      })
+      return
+    }
+
+    setErrors({
+      ...errors,
+      username: null
     })
   }
 
@@ -29,12 +54,23 @@ function App() {
     })
   }
 
+  const handlerFormSubmit = (e) => {
+    e.preventDefault()
+    console.log(formState)
+  }
+
   return (
     <div className="form-block">
       <h1>Sign Up</h1>
-      <form className='form'>
+      <form onSubmit={handlerFormSubmit} className='form'>
         <div>
-          <label htmlFor="">Username</label>
+          <label htmlFor="">Username
+            {errors.username && <span style={{
+              color: 'red',
+              fontSize: "12px",
+              marginLeft: "10px"
+            }}>{errors.username}</span>}
+          </label>
           <input onChange={handleUsername} value={formState.username} type="text" id='username' />
         </div>
         <div>
@@ -47,6 +83,10 @@ function App() {
         </div>
         <button>Submit</button>
         <div>
+          <p>Errors</p>
+          <pre>
+            {JSON.stringify(errors, 0, 2)}
+          </pre>
           <p>Form State</p>
           <pre>
             {JSON.stringify(formState, 0, 2)}
