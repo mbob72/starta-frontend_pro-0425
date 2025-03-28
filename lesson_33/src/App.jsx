@@ -64,21 +64,21 @@ function App() {
       <h1>Sign Up</h1>
       <form onSubmit={handlerFormSubmit} className='form'>
         <div>
-          <label htmlFor="">Username
+          <label htmlFor="username">Username
             {errors.username && <span style={{
               color: 'red',
               fontSize: "12px",
               marginLeft: "10px"
             }}>{errors.username}</span>}
           </label>
-          <input onChange={handleUsername} value={formState.username} type="text" id='username' />
+          <input className={errors.username ? "error" : ""} onChange={handleUsername} value={formState.username} type="text" id='username' />
         </div>
         <div>
-          <label htmlFor="">Email</label>
+          <label htmlFor="email">Email</label>
           <input onChange={handleEmail} value={formState.email} type="email" id='email' />
         </div>
         <div>
-          <label htmlFor="">Password</label>
+          <label htmlFor="password">Password</label>
           <input onChange={handlePassword} value={formState.password} type="password" id='password' />
         </div>
         <button>Submit</button>

@@ -30,6 +30,14 @@
 
       input {
         padding: 5px;
+
+        &.error {
+          border: 2px solid red;
+        }
+
+        &:focus {
+          outline: none;
+        }
       }
     }
   }
