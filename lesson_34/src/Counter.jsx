@@ -4,7 +4,7 @@ export const Counter = () => {
 
     useEffect(() => {
         setInterval(() => {
-            setCounter(counter + 1);
+            setCounter(c => c + 1);
         }, 1000);
     }, []);
 
