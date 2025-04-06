@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import './App.scss'
+import NameRepeater from "./NameRepeater.jsx";
 
 function App() {
 
@@ -7,12 +8,16 @@ function App() {
     console.log('Компонент примонтирован');
   }, []);
 
+  const [name, setName] = useState('');
+
   console.log('render')
 
 
   return (
     <div className="form-block">
-        useEffect inside me!
+      Put the name please
+      <input className={'input'} onChange={(e) => setName(e.target.value)} />
+      <NameRepeater  name={name}/>
     </div>
   )
 }
