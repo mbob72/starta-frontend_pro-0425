@@ -1,7 +1,7 @@
-import {useEffect, useState} from 'react'
+import {useState} from 'react'
 import './App.scss'
-import NameRepeater from "./NameRepeater.jsx";
-import {Counter} from "./Counter.jsx";
+import {ScrollListener} from "./ScrollListener.jsx";
+
 
 function App() {
 
@@ -10,8 +10,8 @@ function App() {
 
     return (
         <div className="form-block">
-            <button onClick={() => setStart(!start)} >Start/Stop counter</button>
-            {start && <Counter/>}
+            <button onClick={() => setStart(!start)}>Scroll Listener</button>
+            {start && <ScrollListener start={start}/>}
         </div>
     )
 }
