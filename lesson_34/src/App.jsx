@@ -1,6 +1,6 @@
 import {useState} from 'react'
 import './App.scss'
-import {Nested} from "./Nested.jsx";
+import ThemeComponent from "./ThemeProvider.jsx";
 
 
 function App() {
@@ -10,8 +10,8 @@ function App() {
 
     return (
         <div className="form-block">
-            <button onClick={() => setStart(!start)}>Nested Counters</button>
-            <Nested />
+            <button onClick={() => setStart(!start)}>Theme Context</button>
+            <ThemeComponent />
         </div>
     )
 }
