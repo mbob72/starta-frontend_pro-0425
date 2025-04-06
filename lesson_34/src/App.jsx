@@ -1,6 +1,6 @@
 import {useState} from 'react'
 import './App.scss'
-import SimpleCounters from "./SimpleCounters.jsx";
+import {Nested} from "./Nested.jsx";
 
 
 function App() {
@@ -10,8 +10,8 @@ function App() {
 
     return (
         <div className="form-block">
-            <button onClick={() => setStart(!start)}>Smart Counters</button>
-            <SimpleCounters />
+            <button onClick={() => setStart(!start)}>Nested Counters</button>
+            <Nested />
         </div>
     )
 }
