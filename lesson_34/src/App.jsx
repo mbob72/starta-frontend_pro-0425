@@ -1,6 +1,7 @@
 import {useState} from 'react'
 import './App.scss'
 import {ScrollListener} from "./ScrollListener.jsx";
+import {ApiFetch} from "./ApiFetch.jsx";
 
 
 function App() {
@@ -10,8 +11,8 @@ function App() {
 
     return (
         <div className="form-block">
-            <button onClick={() => setStart(!start)}>Scroll Listener</button>
-            {start && <ScrollListener start={start}/>}
+            <button onClick={() => setStart(!start)}>Fetch data</button>
+            {start && <ApiFetch />}
         </div>
     )
 }

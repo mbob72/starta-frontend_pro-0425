@@ -12,8 +12,14 @@
   border-radius: 10px;
   max-width: 780px;
   min-width: 500px;
+  min-height: 50vh;
+
   .input {
     margin-left: 1rem;
+  }
+
+  .top-margin {
+    margin-top: 1rem;
   }
 
   h1 {
