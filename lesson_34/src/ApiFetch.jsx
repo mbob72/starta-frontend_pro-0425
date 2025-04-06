@@ -1,12 +1,19 @@
 import {useState, useEffect} from 'react';
 
+let count = 0;
+const fetchDecorator = async () => {
+    console.log(count)
+    return (count++ % 3) ? Promise.reject()
+        : fetch('https://jsonplaceholder.typicode.com/todos/1')
+            .then(response => response.json())
+}
+
 export const ApiFetch = () => {
 
     const [data, setData] = useState(null);
 
     useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/todos/1')
-            .then(response => response.json())
+        fetchDecorator()
             .then(json => setData(json))
 
     }, [])
