@@ -1,7 +1,6 @@
 import {useState} from 'react'
 import './App.scss'
-import {ScrollListener} from "./ScrollListener.jsx";
-import {ApiFetch} from "./ApiFetch.jsx";
+import SmartCounters from "./SmartCounters.jsx";
 
 
 function App() {
@@ -11,8 +10,8 @@ function App() {
 
     return (
         <div className="form-block">
-            <button onClick={() => setStart(!start)}>Fetch data</button>
-            {start && <ApiFetch />}
+            <button onClick={() => setStart(!start)}>Smart Counters</button>
+            <SmartCounters />
         </div>
     )
 }
