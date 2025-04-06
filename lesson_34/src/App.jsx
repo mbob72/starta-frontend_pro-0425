@@ -1,6 +1,6 @@
 import {useState} from 'react'
 import './App.scss'
-import SmartCounters from "./SmartCounters.jsx";
+import SimpleCounters from "./SimpleCounters.jsx";
 
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
     return (
         <div className="form-block">
             <button onClick={() => setStart(!start)}>Smart Counters</button>
-            <SmartCounters />
+            <SimpleCounters />
         </div>
     )
 }
